@@ -1,8 +1,11 @@
 import requests
 from bs4 import BeautifulSoup
+import asyncio
+
 from usercase.export_excel import ExcelExporter
 from usercase.export_csv import CSVExporter
 from usercase.generate_plots import JobAnalysisUseCase
+from usercase.submit_form import JobSubmitter
 
 class JobScraper:
     BASE_URL = 'https://gruposeb.gupy.io'
@@ -60,6 +63,8 @@ class JobScraper:
 
             page += 1
         
+        # Envia os dados para o formulário.
+        JobSubmitter().execute(jobs_list)
         # Exporta os dados para um arquivo Excel.
         ExcelExporter().execute(data=jobs_list)
         # Exporta os dados para um arquivo CSV.
