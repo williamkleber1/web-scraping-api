@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório de Análise de Vagas</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            margin-top: 20px;
+        }
+        .container {
+            margin-bottom: 30px;
+        }
+        .img-fluid {
+            margin-bottom: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .table-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 0;
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <div class="container">
+        <h1>Relatório de Análise de Vagas</h1>
+    </div>
+</div>
+
+<div class="container">
+    <h2 class="text-center mb-4">Análises Gráficas</h2>
+
+    <div class="text-center">
+        <h3>Quantidade de Vagas por Tipo</h3>
+        <img src="/static/jobs_by_type.png" alt="Quantidade de Vagas por Tipo" class="img-fluid">
+    </div>
+
+    <div class="text-center">
+        <h3>Top 10 Títulos de Vagas Mais Comuns</h3>
+        <img src="/static/jobs_by_title.png" alt="Top 10 Títulos de Vagas Mais Comuns" class="img-fluid">
+    </div>
+
+    <div class="text-center">
+        <h3>Distribuição de Vagas por Localização</h3>
+        <img src="/static/jobs_by_locale.png" alt="Distribuição de Vagas por Localização" class="img-fluid">
+    </div>
+
+    <div class="text-center">
+        <h3>Relação entre Tipo de Vaga e Localização</h3>
+        <img src="/static/jobs_relation.png" alt="Relação entre Tipo de Vaga e Localização" class="img-fluid">
+    </div>
+
+    <div class="table-container
+">
+<h2 class="text-center">Lista de Vagas</h2>
+<!--TABELA-->
+</div>
+
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

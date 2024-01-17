@@ -1,7 +1,9 @@
 import pandas as pd
 import matplotlib as mpl
-#mpl.use('Agg')
+mpl.use('Agg') #se tiver no macos, descomentar essa linha
 import seaborn as sns
+from matplotlib.backends.backend_pdf import PdfPages
+
 
 class JobAnalysisUseCase:
 
@@ -45,9 +47,27 @@ class JobAnalysisUseCase:
         """ Executa os métodos de plotagem. """
         self.df = pd.DataFrame(job_list)
 
-        self.plot_jobs_by_type()
-        self.plot_jobs_by_title()
-        self.plot_jobs_by_location()
-        self.plot_jobs_relation()
+        # Salva os dados em um arquivo HTML.
+        tabela_html = self.df.to_html(index=False, classes='table')
+        with open('output/tabela_vagas.html', 'w') as f:
+            f.write(tabela_html)
+        
+        # Salva os dados em um arquivo PDF
+        with PdfPages('job_analysis_report.pdf') as pdf:
+            self.plot_jobs_by_type()
+            pdf.savefig()
+            mpl.pyplot.close()
+
+            self.plot_jobs_by_title()
+            pdf.savefig()
+            mpl.pyplot.close()
+
+            self.plot_jobs_by_location()
+            pdf.savefig()
+            mpl.pyplot.close()
+
+            self.plot_jobs_relation()
+            pdf.savefig()
+            mpl.pyplot.close()
         
 
